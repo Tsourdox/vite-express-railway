@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 
 const port = process.env.PORT || 3000;
 
 const app = express();
+app.use(cors());
 
-app.get('/api/test', (req, res) => {
+app.get('/', (req, res) => {
   res.json('Hello World!');
 });
 

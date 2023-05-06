@@ -8,7 +8,7 @@ function App() {
   const [message, setMessage] = useState('Getting message...');
 
   useEffect(() => {
-    fetch('/api/test').then(async (res) => {
+    fetch('http://localhost:3000').then(async (res) => {
       const message = await res.json();
       setMessage(message);
     });
