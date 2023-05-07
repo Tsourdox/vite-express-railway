@@ -3,19 +3,12 @@ import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 
-function url(path: string) {
-  if (import.meta.env.NODE_ENV === 'development') {
-    return path;
-  }
-  return import.meta.env.VITE_API_URL + path;
-}
-
 function App() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('Getting message...');
 
   useEffect(() => {
-    fetch(url('/api')).then(async (res) => {
+    fetch('/api').then(async (res) => {
       const message = await res.json();
       setMessage(message);
     });
