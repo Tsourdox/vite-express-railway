@@ -3,12 +3,19 @@ import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 
+function url(path: string) {
+  if (process.env.NODE_ENV === 'development') {
+    return path;
+  }
+  return process.env.API_URL + path;
+}
+
 function App() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('Getting message...');
 
   useEffect(() => {
-    fetch('http://localhost:3000').then(async (res) => {
+    fetch(url('/api')).then(async (res) => {
       const message = await res.json();
       setMessage(message);
     });
