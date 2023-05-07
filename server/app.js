@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.json('Hello from the express server');
+  res.json('Hello from the express server!');
 });
 
 module.exports = { app };
