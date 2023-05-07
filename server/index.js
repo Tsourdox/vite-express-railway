@@ -1,10 +1,8 @@
 const express = require('express');
-const cors = require('cors');
 
 const port = process.env.PORT || 3000;
 
 const app = express();
-app.use(cors({ url: 'https://vite-express-frontend.up.railway.app' }));
 
 app.get('/', (req, res) => {
   res.json('Hello World!');
