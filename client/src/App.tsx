@@ -7,7 +7,7 @@ function url(path: string) {
   if (import.meta.env.NODE_ENV === 'development') {
     return path;
   }
-  return import.meta.env.API_URL + path;
+  return import.meta.env.VITE_API_URL + path;
 }
 
 function App() {
