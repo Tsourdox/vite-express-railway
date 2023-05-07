@@ -4,10 +4,10 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 
 function url(path: string) {
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.NODE_ENV === 'development') {
     return path;
   }
-  return process.env.API_URL + path;
+  return import.meta.env.API_URL + path;
 }
 
 function App() {
